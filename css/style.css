@@ -1,0 +1,160 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  background-color: #DECDF5;
+}
+
+#root {
+  width: 300px;
+  height: 350px;
+  margin: 50px auto;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  border-radius: 5%;
+  background-color: #F8F1FF;
+  -webkit-box-shadow: 2px 1px 17px 0px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 2px 1px 17px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 2px 1px 17px 0px rgba(0, 0, 0, 0.3);
+  position: relative;
+  transition: all .5s;
+  animation: form 1s ease-in-out 1;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 1.7rem;
+  font-family: 'Lobster Two', cursive;
+  color: #320056;
+  background: linear-gradient(45deg, #49C6B8, #6049C6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+input {
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid #8C7D93;
+  color: white;
+  border-radius: 50px;
+  background-color: #8466A3;
+}
+
+input::placeholder {
+  color: #DECDF5;
+  font-weight: light;
+}
+
+label[name="password"]::before {
+  position: absolute;
+  left: 35px;
+  top: 222px;
+  content: "https";
+  font-family: 'Material Icons';
+  color: grey;
+  font-size: 1.1rem;
+  background: linear-gradient(45deg, #49C6B8, #6049C6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+label[name="email"]::before {
+  content: "alternate_email";
+  font-family: 'Material Icons';
+  color: grey;
+  font-size: 1.1rem;
+  position: absolute;
+  left: 35px;
+  top: 173px;
+  background: linear-gradient(45deg, #49C6B8, #6049C6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+label[name="username"]::before {
+  content: 'person';
+  font-family: 'Material Icons';
+  color: grey;
+  font-size: 1.2rem;
+  position: absolute;
+  left: 35px;
+  top: 125px;
+  background: linear-gradient(45deg, #49C6B8, #6049C6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 30px 10px 30px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  color: white;
+  left: 20%;
+  background-color: #49C6B8;
+  background-image: linear-gradient(45deg, #49C6B8, #6049C6);
+  transition: all .5s;
+  -webkit-box-shadow: 7px 1px 17px -8px black;
+  -moz-box-shadow: 7px 1px 17px -8px black;
+  box-shadow: 7px 1px 17px -8px black;
+  font-family: roboto;
+  letter-spacing: .3px;
+}
+
+button:hover {
+  transform: scale(1.1);
+  background-image: linear-gradient(90deg, #6049C6, #49C6B8);
+}
+
+@keyframes form {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (min-width: 700px) {
+  #root {
+    width: 370px;
+    height: 400px;
+  }
+
+  input {
+    padding-left: 20px;
+    padding-right: 50px;
+  }
+
+  label[name="password"]::before {
+    left: 45px;
+    top: 248px;
+  }
+
+  label[name="email"]::before {
+    left: 45px;
+    top: 200px;
+  }
+
+  label[name="username"]::before {
+    left: 45px;
+    top: 150px;
+  }
+
+  #form {
+    width: 93%;
+  }
+
+  button {
+    left: 27%;
+  }
+}

@@ -1,0 +1,64 @@
+class Input extends React.Component {
+  render() {
+    return (
+      <div className="input">
+        <label name={this.props.name}></label>
+          <input 
+            id={this.props.name} 
+            type={this.props.type}
+            placeholder={this.props.placeholder}
+            />
+      </div>
+    );
+  }
+}
+
+class Form extends React.Component {
+  
+  render() {
+    return (
+      <div id="form">
+        <form>
+          <h2>Welcome back!</h2>
+          <Input 
+            name="username"
+            placeholder="Username" 
+            type="text"
+            required
+            />
+          <Input 
+            name="email"
+            placeholder="user@email.com"
+            type="email"
+            required
+            />
+          <Input
+            name="password"
+            placeholder="Password"
+            type="password"
+            required
+            />
+          <button onClick={this.props.onClick} >Sign In</button>
+        </form>
+      </div>
+    );
+  }
+}
+
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+  
+  handleClick(e) {
+    e.preventDefault();
+    console.log(e);
+  }
+  
+  render() {
+    return <Form onClick={this.handleClick} />
+  }
+}
+
+ReactDOM.render(<App />, document.getElementById('root'));
